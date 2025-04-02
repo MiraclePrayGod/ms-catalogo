@@ -1,5 +1,6 @@
 server:
   port: 7070
+
 spring:
   application:
     name: config-server
@@ -10,3 +11,8 @@ spring:
           uri: https://github.com/MiraclePrayGod/ms-catalogo.git # ruta del repositorio git
           searchPaths: config-data
           default-label: main
+
+  security:
+    user:
+      name: root
+      password: 123456
