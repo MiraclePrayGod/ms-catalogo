@@ -1,4 +1,4 @@
-package com.example.ms_catalogo.entity;
+package com.example.ms_producto.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,12 +13,14 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Integer id;
     private String nombre;
+    private double precio;
+
 
     public Integer getId() {
         return id;
     }
 
-    public void setId (Integer id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -30,9 +32,17 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public Producto(Integer id, String nombre) {
-        this.id = id;
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public Producto(String nombre, double precio) {
         this.nombre = nombre;
+        this.precio = precio;
     }
     public Producto() {
 

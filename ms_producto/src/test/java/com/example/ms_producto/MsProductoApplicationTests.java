@@ -1,13 +1,13 @@
-package com.example.ms_catalogo;
+package com.example.ms_producto;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MsCatalogoApplicationTests {
+class MsProductoApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }

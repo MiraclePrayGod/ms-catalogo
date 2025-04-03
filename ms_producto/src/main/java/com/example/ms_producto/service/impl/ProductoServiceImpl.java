@@ -1,8 +1,8 @@
-package com.example.ms_catalogo.service.impl;
+package com.example.ms_producto.service.impl;
 
-import com.example.ms_catalogo.entity.Producto;
-import com.example.ms_catalogo.repository.ProductoRepository;
-import com.example.ms_catalogo.service.ProductoService;
+import com.example.ms_producto.entity.Producto;
+import com.example.ms_producto.repository.ProductoRepository;
+import com.example.ms_producto.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,13 +12,14 @@ import java.util.Optional;
 @Service
 public class ProductoServiceImpl implements ProductoService {
 
+
     @Autowired
     private ProductoRepository productoRepository;
 
 
     @Override
     public List<Producto> listar() {
-            return productoRepository.findAll();
+        return productoRepository.findAll();
     }
 
     @Override
@@ -27,18 +28,18 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public Producto guardar(Producto producto) {
-        return productoRepository.save(producto);
+    public Producto guardar(Producto categoria) {
+        return productoRepository.save(categoria);
     }
 
     @Override
-    public Producto actualizar ( Integer id , Producto producto) {
-        producto.setId(id);
-        return productoRepository.save(producto);
+    public Producto actualizar (Integer id , Producto categoria) {
+        categoria.setId(id);
+        return productoRepository.save(categoria);
     }
 
     @Override
     public void eliminar(Integer id) {
-            productoRepository.deleteById(id);
+        productoRepository.deleteById(id);
     }
 }
