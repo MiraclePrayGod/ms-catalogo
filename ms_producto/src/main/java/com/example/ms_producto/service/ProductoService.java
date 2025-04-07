@@ -12,4 +12,6 @@ public interface ProductoService {
     Producto guardar (Producto producto);
     Producto actualizar (Integer id,Producto producto);
     void eliminar (Integer id);
+    List<Producto> obtenerProductosFiltrados(String nombre, String categoria, Double precioMin, Double precioMax);
+
 }

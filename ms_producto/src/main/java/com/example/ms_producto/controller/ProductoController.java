@@ -37,4 +37,12 @@ public class ProductoController {
     public void eliminar(@PathVariable Integer id) {
         productoService.eliminar(id);
     }
+
+    @GetMapping("/productos/filtrar")
+    public List<Producto> filtrarProductos(@RequestParam(required = false) String nombre,
+                                           @RequestParam(required = false) String categoria,
+                                           @RequestParam(required = false) Double precioMin,
+                                           @RequestParam(required = false) Double precioMax) {
+        return productoService.obtenerProductosFiltrados(nombre, categoria, precioMin, precioMax);
+    }
 }
