@@ -1,10 +1,10 @@
-package com.example.msgatewayserver;
+package com.example.msgatewayservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MsGatewayServerApplicationTests {
+class MsGatewayServiceApplicationTests {
 
     @Test
     void contextLoads() {

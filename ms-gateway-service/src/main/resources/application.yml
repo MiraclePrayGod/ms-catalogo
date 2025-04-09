@@ -1,8 +1,10 @@
+
 spring:
   application:
-    name: ms-gateway-server
+    name: spring-cloud-gateway
   profiles:
-    active: development
+    active:
   config:
     import: optional:configserver:http://root:123456@localhost:7070
+
 
