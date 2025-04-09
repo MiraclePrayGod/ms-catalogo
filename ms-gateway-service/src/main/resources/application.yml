@@ -1,7 +1,7 @@
 
 spring:
   application:
-    name: spring-cloud-gateway
+    name: ms-gateway-service
   profiles:
     active:
   config:
