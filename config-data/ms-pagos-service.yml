@@ -1,8 +1,8 @@
 spring:
   application:
-    name: ms-pagos
+    name: ms-pagos-service
   datasource:
-    url: jdbc:mysql://localhost:3306/ms-pagos
+    url: jdbc:mysql://localhost:3306/ms-pagos-service
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
