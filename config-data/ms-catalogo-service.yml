@@ -2,7 +2,7 @@ spring:
   application:
     name: ms_catalogo
   datasource:
-    url: jdbc:mysql://localhost:3306/ms_catalogo2
+    url: jdbc:mysql://localhost:3306/ms_catalogo
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
