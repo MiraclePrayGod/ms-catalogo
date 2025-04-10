@@ -19,10 +19,12 @@ public class CategoriaController {
     public List<Categoria> listar() {
         return categoriaService.listar();
     }
+
     @RequestMapping("/id")
     public Categoria buscar(Integer id) {
         return categoriaService.listar().get(id);
     }
+
     @PostMapping
     public Categoria guardar (@RequestBody Categoria categoria) {
         return categoriaService.guardar(categoria);
@@ -36,4 +38,6 @@ public class CategoriaController {
     public void eliminar(@PathVariable Integer id) {
         categoriaService.eliminar(id);
     }
+
+
 }

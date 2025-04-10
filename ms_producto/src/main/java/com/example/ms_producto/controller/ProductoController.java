@@ -20,10 +20,13 @@ public class ProductoController {
     public List<Producto> listar() {
         return productoService.listar();
     }
+
+
     @RequestMapping("/id")
     public Producto buscar(Integer id) {
         return productoService.listar().get(id);
     }
+
     @PostMapping
     public Producto guardar (@RequestBody Producto categoria) {
         return productoService.guardar(categoria);
@@ -45,4 +48,6 @@ public class ProductoController {
                                            @RequestParam(required = false) Double precioMax) {
         return productoService.obtenerProductosFiltrados(nombre, categoria, precioMin, precioMax);
     }
+
+
 }

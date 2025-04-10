@@ -3,7 +3,6 @@ package com.example.ms_catalogo.service.impl;
 import com.example.ms_catalogo.entity.Categoria;
 import com.example.ms_catalogo.repository.CategoriaRepository;
 import com.example.ms_catalogo.service.CategoriaService;
-import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
