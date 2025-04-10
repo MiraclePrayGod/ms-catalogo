@@ -1,26 +1,30 @@
-server:
-  port: 8080
+  server:
+    port: 8080
 
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8090/eureka
-  instance:
-    hostname: localhost
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8090/eureka
+    instance:
+      hostname: localhost
 
-spring:
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enable: true
-      routes:
-        - id: ms-catalogo
-          uri: lb://ms-catalogo
-          predicates:
-            - Path=/categorias/**
-        - id: ms-producto
-          uri: lb://ms-producto
-          predicates:
-            - Path=/productos/**
+  spring:
+    cloud:
+      gateway:
+        discovery:
+          locator:
+            enable: true
+        routes:
+          - id: ms-catalogo
+            uri: lb://ms-catalogo
+            predicates:
+              - Path=/categorias/**
+          - id: ms-producto
+            uri: lb://ms-producto
+            predicates:
+              - Path=/productos/**
+          - id: ms-pago
+            uri: lb://ms-pago
+            predicates:
+              - Path=/pagos/**
