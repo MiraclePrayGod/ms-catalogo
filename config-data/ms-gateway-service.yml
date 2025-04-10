@@ -19,7 +19,7 @@ spring:
 
       routes:
         - id: ms-producto-service
-          uri: ms-producto-service
+          uri: lb://ms-producto-service
           predicates:
             - Path=/productos/**
 
