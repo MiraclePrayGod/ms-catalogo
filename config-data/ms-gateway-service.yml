@@ -16,11 +16,13 @@ spring:
         locator:
           enable: true
       routes:
-        - id: ms-producto
-          uri: lb://ms-producto
-          predicates:
-            - Path=/productos/**
         - id: ms_catalogo
           uri: lb://ms_catalogo
           predicates:
             - Path=/categorias/**
+
+
+        - id: ms-producto
+          uri: lb://ms-producto
+          predicates:
+            - Path=/productos/**
