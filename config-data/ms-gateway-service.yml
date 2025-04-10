@@ -12,15 +12,14 @@ eureka:
 spring:
   cloud:
     gateway:
-
-      discover:
+      discovery:
         locator:
           enable: true
 
 
       routes:
-        - id: ms-catalogo-service
-          uri: lb://ms-catalogo-service
+        - id: ms-producto-service
+          uri: ms-producto-service
           predicates:
-            - Path=/categorias/**
+            - Path=/productos/**
 
