@@ -1,9 +1,7 @@
 package org.example.mspedido.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.example.mspedido.dato.Producto;
 
 @Entity
 public class PedidoDetalle {
@@ -14,7 +12,12 @@ public class PedidoDetalle {
     private Double precio;
     private Integer productoId;
 
-    public PedidoDetalle() {
+    @Transient
+    private Producto producto;
+
+    public PedidoDetalle(){
+        this.cantidad = (double)0;
+        this.precio = (double)0;
     }
 
     public PedidoDetalle(Integer id, Double cantidad, Double precio, Integer productoId) {

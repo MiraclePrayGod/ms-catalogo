@@ -22,6 +22,9 @@ public class Pedido {
 
     private List<PedidoDetalle> detalle;
 
+
+    @Transient
+    private Cliente cliente;
     public Pedido() {
     }
 
