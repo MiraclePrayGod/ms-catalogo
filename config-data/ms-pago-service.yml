@@ -1,22 +1,20 @@
 spring:
-  application:
-    name: ms-pago
+  config:
+    activate:
+      on-profile: prod
   datasource:
-    url: jdbc:mysql://localhost:3306/ms-pagos
+    url: jdbc:postgresql://localhost:5432/ms-pedido
     username: root
     password:
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
-    open-in-view: false
-    properties:
-      hibernate:
-        format_sql: true
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 server:
-  port: 8083
+  port: 8084
 
 springdoc:
   api-docs:
