@@ -2,7 +2,7 @@ spring:
   application:
     name: ms-pedido
   datasource:
-      url: jdbc:mysql://localhost:3306/ms-pedido
+    url: jdbc:mysql://localhost:3306/ms-pedido
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
