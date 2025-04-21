@@ -2,6 +2,7 @@ package org.example.mspedido.entity;
 
 import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 import jakarta.persistence.*;
+import org.example.mspedido.dato.Cliente;
 
 import java.util.List;
 
@@ -83,5 +84,9 @@ public class Pedido {
 
     public void setDetalle(List<PedidoDetalle> detalle) {
         this.detalle = detalle;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 }

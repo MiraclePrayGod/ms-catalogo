@@ -1,8 +1,10 @@
 package org.example.mspedido.service.impl;
 
+import org.example.mspedido.dato.Cliente;
 import org.example.mspedido.dato.Producto;
 import org.example.mspedido.entity.Pedido;
 import org.example.mspedido.entity.PedidoDetalle;
+import org.example.mspedido.feing.ClienteFeing;
 import org.example.mspedido.feing.ProductoFeing;
 import org.example.mspedido.repository.PedidoRepository;
 import org.example.mspedido.service.PedidoService;
@@ -24,6 +26,8 @@ public class PedidoServiceImpl implements PedidoService {
     @Autowired
     private ProductoFeing productoFeing;
 
+    @Autowired
+    private ClienteFeing clienteFeing;
 
     @Override
     public List<Pedido> listar() {
@@ -33,16 +37,18 @@ public class PedidoServiceImpl implements PedidoService {
     @Override
     public Optional<Pedido> buscar(Integer id) {
         Pedido pedido = pedidoRepository.findById(id).get();
+        Cliente cliente = clienteFeing.listById(pedido.getClienteId()).getBody();
         List<PedidoDetalle> pedidoDetalles = pedido.getDetalle().stream().map(pedidoDetalle -> {
-
-            Producto producto = productoFeing.ListById(pedidoDetalle.getProductoId()).getBody();
-            pedidoDetalle.setProductoId(producto.getId());
+            Producto producto = productoFeing.listById(pedidoDetalle.getProductoId()).getBody();
+            pedidoDetalle.setProducto(producto);
             return pedidoDetalle;
         }).collect(Collectors.toList());
-        pedido.setDetalle(pedidoDetalles);
 
+        pedido.setDetalle(pedidoDetalles);
+        pedido.setCliente(cliente);
         return Optional.of(pedido);
     }
+
 
     @Override
     public Pedido guardar(Pedido pedido) {

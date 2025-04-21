@@ -1,22 +1,18 @@
 spring:
-  application:
-    name: ms-cliente
   datasource:
-    url: jdbc:mysql://localhost:3306/ms-cliente
-    username: root
-    password:
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:postgresql://localhost:5432/ms-cliente
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
-    open-in-view: false
-    properties:
-      hibernate:
-        format_sql: true
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
 
 server:
-  port: 8087
+  port: 8086
 
 springdoc:
   api-docs:

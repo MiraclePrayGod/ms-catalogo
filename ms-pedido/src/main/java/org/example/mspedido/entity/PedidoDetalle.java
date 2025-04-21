@@ -15,9 +15,9 @@ public class PedidoDetalle {
     @Transient
     private Producto producto;
 
-    public PedidoDetalle(){
-        this.cantidad = (double)0;
-        this.precio = (double)0;
+    public PedidoDetalle() {
+        this.cantidad = 0.0;
+        this.precio = 0.0;
     }
 
     public PedidoDetalle(Integer id, Double cantidad, Double precio, Integer productoId) {
@@ -59,5 +59,12 @@ public class PedidoDetalle {
         this.productoId = productoId;
     }
 
+    // ✅ Métodos correctos para el campo 'producto'
+    public Producto getProducto() {
+        return producto;
+    }
 
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
 }
