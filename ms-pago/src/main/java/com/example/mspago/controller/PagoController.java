@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 @RequestMapping("/pagos")
+
+
 public class PagoController {
     @Autowired
     private PagoService pagoService;
-
-
 
     @RequestMapping
     public List<Pago> listar() {

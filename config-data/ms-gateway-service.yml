@@ -28,3 +28,7 @@
             uri: lb://ms-pago
             predicates:
               - Path=/pagos/**
+          - id: ms-pedido
+            uri: lb://ms-pedido
+            predicates:
+              - Path=/pedidos/**
