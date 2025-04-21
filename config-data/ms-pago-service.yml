@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/ms-pagos
-    username: root
-    password:
+    username: postgress
+    password: 123456
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
